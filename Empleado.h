@@ -31,6 +31,7 @@ class Empleado {
 protected:
 	string *nombre;
 	int *id;
+	int *annosExperiencia;
 	float *salario;
 	bool *flagRevision;
 //Metodo
