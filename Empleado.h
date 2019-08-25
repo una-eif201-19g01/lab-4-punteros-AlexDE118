@@ -48,7 +48,7 @@ public:
 	float getSalario();
 	bool getFlagRevision();
 	void setNombre(string *nom);
-	//void setID();
+	void setID();
 	void setAnnosExperiencia(int *annosExp);
 	void setSalario(float *salary);
 	void setFlagRevision(bool *flagRevisionValue);

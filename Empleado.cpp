@@ -1,4 +1,9 @@
 #include "Empleado.h"
+
+//librerias para rand()
+#include <stdlib.h>
+#include <time.h>
+
 /*
  * =====================================================================================
  *
@@ -62,6 +67,11 @@ void Empleado::setNombre(string *nom)
 	*nombre = *nom;
 }
 
+void Empleado::setID()
+{
+	*id = randomizerID();
+}
+
 void Empleado::setAnnosExperiencia(int * annosExp)
 {
 	annosExperiencia = annosExp;
@@ -77,6 +87,14 @@ void Empleado::setFlagRevision(bool * flagRevisionValue)
 	flagRevision = flagRevisionValue;
 }
 
+int Empleado::randomizerID()
+{	
+	srand(time(NULL));
+	int id = rand() % 100 + 1;
+
+	return id;
+}
+
 float Empleado::aumentarSalario()
 {
 	if (*annosExperiencia > 1 && *annosExperiencia < 3)
@@ -84,4 +102,16 @@ float Empleado::aumentarSalario()
 	else
 		if (*annosExperiencia >= 3)
 			return *salario * 0.05;		//salario * 5%
+}
+
+void Empleado::revisionAleatoria()
+{
+	int revisionFinalValue = rand() % 1;
+	bool *stateA = false;
+	bool *stateB = true; //preguntar profe
+
+	if (revisionFinalValue == 0)
+		setFlagRevision(stateA);
+	else
+		setFlagRevision(stateB);
 }
