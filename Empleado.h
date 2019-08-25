@@ -24,7 +24,7 @@ using namespace std;
 
 const int IDMIN = 1;
 const int IDMAX = 100;
-const float SALARIO_BASE = 800000;
+const float SALARIO_BASE = 800000.00;
 
 class Empleado {
 //atributos
@@ -34,11 +34,28 @@ protected:
 	int *annosExperiencia;
 	float *salario;
 	bool *flagRevision;
-//Metodo
+
+	
+//Metodos
 
 public:
 	Empleado();
+	Empleado(string*,int*, float*, bool*);
+	string reporteEmpleado();
+	string getNombre();
+	int getID();
+	int getAnnosExperiencia();
+	float getSalario();
+	bool getFlagRevision();
+	void setNombre(string *nom);
+	//void setID();
+	void setAnnosExperiencia(int *annosExp);
+	void setSalario(float *salary);
+	void setFlagRevision(bool *flagRevisionValue);
+	int randomizerID();
 private:
+	float aumentarSalario();
+	void revisionAleatoria();
 
 };
 
