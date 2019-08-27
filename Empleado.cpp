@@ -90,7 +90,7 @@ void Empleado::setFlagRevision(bool * flagRevisionValue)
 int Empleado::randomizerID()
 {	
 	srand(time(NULL));
-	int id = rand() % 100 + 1;
+	int id = rand() % IDMAX + IDMIN;
 
 	return id;
 }

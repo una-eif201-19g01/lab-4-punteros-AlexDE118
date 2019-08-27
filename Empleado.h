@@ -40,7 +40,7 @@ protected:
 
 public:
 	Empleado();
-	Empleado(string*,int*, float*, bool*);
+	Empleado(string*,int*, float*);
 	string reporteEmpleado();
 	string getNombre();
 	int getID();
